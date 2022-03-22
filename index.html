@@ -1,0 +1,58 @@
+<!-- CODE EXPLAINED CHANNEL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - To Do List</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="clear">
+                <i class="fa fa-refresh"></i>
+            </div>
+            <div id="date"></div>
+            <label for="select" id="search" class="mb-0">Search</label>
+            <select name="select" id="select" onchange="filterTodo(this.value)">
+                <option value="all">All</option>
+                <option value="true">Completed</option>
+                <option value="false">Uncompleted</option>
+            </select>
+        </div>
+        <div class="content">
+            <ul id="list">
+               
+            </ul>
+        </div>
+        <div class="add-to-do">
+            <i id="add" class="fa fa-plus-circle"></i>
+            <input type="text" id="input" placeholder="Add a to-do" autofocus>
+        </div>
+    </div>
+    <!-- edit Modal -->
+    <div class="modal fade" id="edit-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-success fw-bold" id="staticBackdropLabel">EDIT TODO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea type="text" name="text" id="modal" class="w-100"></textarea>
+                </div>
+                <div class="modal-footer" id="edit">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- edit Modal -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

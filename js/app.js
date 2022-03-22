@@ -1,5 +1,3 @@
-// CODE EXPLAINED channel
-
 // Select the Elements
 const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
@@ -16,7 +14,7 @@ const LINE_THROUGH = "lineThrough";
 
 add.addEventListener('click', addTodo);
 clear.addEventListener('click', clearTodo);
-// date.innerHTML= new Date().getDate().getFullYear();
+
 
 function addTodo() {
     let todos = localStorage.getItem('TODOS') ? JSON.parse(localStorage.getItem('TODOS')) : [];
@@ -120,7 +118,7 @@ function clearTodo() {
 function updateUI () {
     let todos = JSON.parse(localStorage.getItem('TODOS'));
     list.innerHTML = '';
-    if (todos.length >= 1) {
+    if (todos && todos.length >= 1) {
         todos.forEach(item => {
             list.innerHTML += `
             <li class="item">
